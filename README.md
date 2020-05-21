@@ -1,2 +1,1 @@
-https://www.thyagonunes.github.io
-webpage portfolio
+webpage exercise portfolio rocketseat masterclass
