@@ -1,0 +1,238 @@
+@import 'https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap';
+
+:root {
+    --color-purple: #7159c1;
+    --color-green: #00ff0d;
+}
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+body {
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: rgba(140, 140, 140, 0.5);
+}
+
+/* ==========================     HEADER     ========================== */
+
+
+header {
+    margin: 15px auto;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+div.links { 
+    width: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.links a {
+    width: 100px;
+    text-decoration: none;
+    color: black;
+    margin: 0 16px;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 50px;
+    background-color: whitesmoke;
+    border: 2px solid black;
+}
+
+.links a:hover {
+    background: whitesmoke;
+    border-radius: 100px;
+    filter: brightness(80%);
+    transition: 400ms;
+}
+
+/* ==========================     WRAPPER     ========================== */
+
+#wrapper { 
+    height: 550px;
+    text-align: center;
+    position: relative;
+}
+
+#wrapper img { 
+    width: 250px;
+    border-radius: 50%;
+    position: relative;
+    top: 130px;
+    border: 4px solid black;
+    filter: contrast(110%);
+
+}
+
+#wrapper h1 {
+    position: relative;
+    top: 170px;
+    font-size: 25px;
+}
+
+#wrapper p {
+    position: relative;
+    top: 190px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* ==========================     SOCIAL MIDIAS     ========================== */
+
+div.social_midias {
+    text-align: center;
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+    top: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.social_midias img {
+    width: 50px;
+    margin: 0 auto;
+    text-align: center;
+    background: white;
+    border-radius: 50px;
+    border: 2px solid whitesmoke;
+}
+
+.social_midias img:hover {
+    background: whitesmoke;
+    border-radius: 100px;
+    filter: brightness(80%);
+    transition: 400ms;
+}
+
+.social_midias a {
+    text-decoration: none;
+}
+
+/* ==========================     FOOTER     ========================== */
+
+
+.footer { 
+    width: auto;
+    text-align: center;
+    top: 200px;
+    position: relative;
+    font-weight: 900;
+    font-style: italic;
+}
+
+/* ==========================     CARDS     ========================== */
+
+
+.cards { 
+    width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    position: relative;
+    top: 50px;
+}
+
+.card {
+    background: var(--color-purple);
+    border-radius: 20px;
+    width: 400px;
+    text-align: center;
+}
+
+.card-img-content img {
+    max-width: 100%;
+    border-radius: 20px;
+
+}
+
+.card-content p {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.card-content,
+.card-info {
+    padding: 10px;
+}
+
+.card-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.time {
+    max-width: 150px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: var(--color-purple);
+    filter: brightness(90%);
+    padding: 5px;
+}
+
+.price {
+    font-size: 20px;
+    padding: 2px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: white;
+    filter: brightness(90%);
+    color: black;
+    font-weight: 900;
+}
+
+/* ==========================     MODAL     ========================== */
+
+
+.modal-overlay { 
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal {
+    background-color: white;
+    width: 90%;
+    height: 90%;
+    margin: 5vh auto;
+    position: relative;
+}
+
+.modal  .close-modal { 
+    color: black;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    cursor: pointer;
+}
+
+/* ==========================     MODAL ACTIVE    ========================== */
+
+.modal-overlay.active {
+     opacity: 1;
+     visibility: visible;
+}
+
+/* ==========================     IFRAME    ========================== */
+
+iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
