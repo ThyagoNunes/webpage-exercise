@@ -18,10 +18,7 @@ server.get("/content", function(req, res) {
   return res.render("content")
 })
 
-server.listen(1234, function(){
-  console.log("server is running");
-})
-
+server.listen(process.env.PORT || 3000);
 
 
 
