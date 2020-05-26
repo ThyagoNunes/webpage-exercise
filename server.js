@@ -15,9 +15,9 @@ server.get("/", function (req, res) {
   return res.render("about");               /* RENDER INDEX */
 });
 
-server.get("/portfolio", function (req, res) {
+server.get("/content", function (req, res) {
 
-  return res.render("portfolio", { items: videos });
+  return res.render("content", { items: videos });
 });
 
 server.listen(process.env.PORT || 3000);
