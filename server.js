@@ -20,9 +20,6 @@ server.get("/portfolio", function (req, res) {
   return res.render("portfolio", { items: videos });
 });
 
-
-server.listen(5000, function () {
-  console.log("Server is running");
-});
+server.listen(process.env.PORT || 3000);
 
 
