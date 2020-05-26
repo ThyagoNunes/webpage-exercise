@@ -1,21 +1,28 @@
-const express = require("express")
+const express = require("express");
 const nunjucks = require("nunjucks");
 
-const server = express()
+const server = express();
+const videos = require("./data")
 
-server.set("view engine", "html")
-server.use(express.static("public"))
+server.use(express.static("public"));       /* CSS */
+server.set("view engine", "njk");          /* SET ENGINE FOR HTML */
 
-nunjucks.configure("views",{
+nunjucks.configure("views", {               /* CONFIGURE NUNJUCKS */
   express: server
-})
+});
 
-server.get("/", function(req, res) {
-  return res.render("about")
-})
+server.get("/", function (req, res) {
+  return res.render("about");               /* RENDER INDEX */
+});
 
-server.get("/content", function(req, res) {
-  return res.render("content")
-})
+server.get("/portfolio", function (req, res) {
 
-server.listen(process.env.PORT || 3000);
+  return res.render("portfolio", { items: videos });
+});
+
+
+server.listen(5000, function () {
+  console.log("Server is running");
+});
+
+
