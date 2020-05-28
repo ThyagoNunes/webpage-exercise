@@ -1,0 +1,70 @@
+{% extends "layout.njk" %}
+    
+	{% block head %}
+		<title>Courses - Thyago Nunes</title>
+	{% endblock %}
+
+    {% block content %}
+
+    <h1 class="title-course">COURSES</h1>
+
+    <section class="card-courses">
+
+        {% for course in courses %}
+        <div class="card-course" id="{{ course.id }}">
+
+            <div class="card-course-content-img">
+                <img src=" {{ course.avatarUrl }} " alt="Imagem do curso {{ course.name }}">
+            </div>
+
+            <div class="card-course-title">
+                <p class="card-course-name">{{ course.name }}</p>
+            </div>
+
+            <div class="card-course-info">
+                <p class="card-course-module">{{ course.modules }}</p>
+                <p class="card-course-price">{{ course.price }}</p>
+            </div>
+
+        </div>
+        {% endfor %}
+
+
+    </section>
+
+    <div class="modal-overlay">
+        <div class="modal">
+
+            <a  class="close-modal">
+                <i class="material-icons">
+                    close
+                </i>
+            </a>
+
+            <a class="maximize-modal">
+                <i class="material-icons">
+                    maximize
+                </i>
+            </a>
+
+            <a class="minimize-modal">
+                <i class="material-icons">
+                    minimize
+                </i>
+            </a>
+            
+            <div class="video-content">
+                <iframe src="" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="courses.js"></script>
+
+    {% endblock %}
+
+
+
+<!-- https://skylab.rocketseat.com.br/static/64c237ccff807c054339a62d53b4b402.svg
+https://skylab.rocketseat.com.br/static/0828532024cb46921a6b5e941f8d788d.svg
+https://skylab.rocketseat.com.br/static/83a178a0653dab1d55e2ed7946465975.svg -->

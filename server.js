@@ -2,24 +2,49 @@ const express = require("express");
 const nunjucks = require("nunjucks");
 
 const server = express();
-const videos = require("./data")
+const videos = require("./videos")
+const about = require('./about')
+const courses = require('./courses')
+const portfolios = require('./portfolios')
 
-server.use(express.static("public"));       /* CSS */
-server.set("view engine", "njk");          /* SET ENGINE FOR HTML */
+server.use(express.static("public"));      
+server.set("view engine", "njk");          
 
-nunjucks.configure("views", {               /* CONFIGURE NUNJUCKS */
-  express: server
+nunjucks.configure("views", {              
+  express: server, 
+  autoescape: false,
+  noCache: true,
 });
 
 server.get("/", function (req, res) {
-  return res.render("about");               /* RENDER INDEX */
+  return res.render("about", { about });
 });
 
-server.get("/content", function (req, res) {
-
-  return res.render("content", { items: videos });
+server.get("/courses", function (req, res) {
+  return res.render("courses", { courses });
 });
 
-server.listen(process.env.PORT || 3000);
+server.get("/portfolios", function (req, res) {
+  return res.render("portfolios", { portfolios });
+});
+
+server.get("/video", function(req, res){
+  const id = req.query.id
+
+  const video = videos.find(function(video){
+    return video.id == id
+  })
+
+  if(!video) {
+    return res.send("Video not found")
+  }
+
+  return res.render("video", { videos: video })
+})
 
 
+server.use(function(req, res){
+  return res.status(404).render('not-found')
+})
+
+server.listen(process.env.PORT || 3000) 
